@@ -4,6 +4,15 @@ using System.Text.RegularExpressions;
 Console.WriteLine("Enter Email Id to validate");
 string emailId = Console.ReadLine() ?? "";
 bool isValid = ValidateEmail(emailId);
+if (isValid == true)
+{
+    Console.WriteLine("True");
+}
+else
+{
+    Console.WriteLine("False");
+}
+
 
 
 static bool ValidateEmail (string emailId)
@@ -22,16 +31,8 @@ static bool ValidateEmail (string emailId)
         Match match = regex.Match(emailId);
         if (match.Success)
         {
-            Console.WriteLine("True");
+            isValid = true;
         }
-        else
-        {
-            Console.WriteLine("False");
-        }
-      
-
-
-
     }
 
     return isValid;
